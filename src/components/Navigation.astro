@@ -1,0 +1,9 @@
+---
+const { currentPage } = Astro.props;
+---
+
+<div id="main-menu" class="nav-links">
+  {currentPage === 'home' ? <a href="/">HOME</a> : <a href="/">home</a>}
+  {currentPage === 'about' ? <a href="/about/">ABOUT</a> : <a href="/about/">about</a>}
+  {currentPage === 'blog' ? <a href="/blog/">BLOG</a> : <a href="/blog/">blog</a>}
+</div>

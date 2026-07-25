@@ -1,0 +1,26 @@
+---
+import Social from './Social.astro'
+---
+
+<footer>
+  <h3>Contact</h3>
+  <div class="socials">
+    <Social platform="twitter" username="SterlingSpencer" platformNickname="X" />
+    <Social platform="github" username="bradtraversy" platformNickname="GH" />
+    <Social platform="youtube" username="glozell" platformNickname="YT" />
+  </div>
+</footer>
+
+<style>
+  footer {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 2rem;
+  }
+
+  footer .socials {
+    display: flex;
+  }
+
+</style>
