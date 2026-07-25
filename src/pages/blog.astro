@@ -1,5 +1,44 @@
 ---
+import BaseLayout from "../layouts/BaseLayout.astro"
+const pageTitle  = "Bloggy blog";
+---
 
+<BaseLayout pageTitle={pageTitle}>
+    <div class="navigation" slot="additional-content">
+        <a href="/posts/post-1">Post #1</a>
+        <a href="/posts/post-2">Post #2</a>
+        <a href="/posts/post-3">Post #3</a>
+    </div>
+
+    <!-- <h1>{pageTitle}</h1> -->
+    <!-- <h2>Post 1</h2> -->
+
+    <!-- <h3>Pipeline</h3> -->
+
+    <!-- <p>Hollower than the devil's soul. </p> -->
+</BaseLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ---
+import Header from "../components/Header.astro";
+import Footer from '../components/Footer.astro';
+import "../styles/global.css"
+
+const pageTitle = "My Blog"
 ---
 
 <html lang="en">
@@ -9,18 +48,27 @@
 		<link rel="icon" href="/favicon.ico" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<title></title>
 	</head>
     <body>
-        <a href="/">Home</a>
-        <a href="/about/">About</a>
-        <a href="/blog/">Blog</a>
+        <Header currentPage="blog" />
 
-        <h1>Blog</h1>
+        <div class="navigation">
+            <a href="/posts/post-1">Post #1</a>
+            <a href="/posts/post-2">Post #2</a>
+            <a href="/posts/post-3">Post #3</a>
+        </div>
+
+        <h1>{pageTitle}</h1>
         <h2>Post 1</h2>
 
         <h3>Pipeline</h3>
 
         <p>Hollower than the devil's soul. </p>
+        <Footer />
+
+        <script>
+			import "../scripts/menu.js";
+		</script>
     </body>
-</html>
+</html> -->

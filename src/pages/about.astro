@@ -1,26 +1,121 @@
 ---
+import BaseLayout from "../layouts/BaseLayout.astro"
+const pageTitle  = "wh i r";
 
+const identity = {
+  firstName: "Logan",
+  country: "Canada",
+  occupation: "logger",
+  hobbies: ["chopping wood", "cutting stuff with my fancy claws", "not dying"],
+};
+
+const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing Docs"];
+
+const happy = true;
+const finished = false;
+const goal = 3;
+
+const surferBoi = true;
+const lastName = 'ever';
+const firstName = 'greatest'
+
+// const skillColor = "blue";
+// const padding = "2rem"
+// const fontWeight = "bold";
+// const textCase = "lowercase";
 ---
+<BaseLayout pageTitle={pageTitle}>
+    <p>I will be loggging surf trips from across the globe</p>
 
-<html lang="en">
+    <p>This site will update as I complete more of the adventure, so check back for more posts!</p>
+
+    <p>Here are a few facts about me:</p>
+        <ul>
+            <li>My name is {identity.firstName}.</li>
+            <li>I live in {identity.country} and I work as a {identity.occupation}.</li>
+            {identity.hobbies.length >= 2 &&
+                <li>Two of my hobbies are: {identity.hobbies[0]} and {identity.hobbies[1]}</li>
+            }
+        </ul>
+        <p>My skills are:</p>
+        <ul>
+            {skills.map((skill) => <li class="skill">{skill}</li>)}
+        </ul>
+
+        {happy && <p>I like getting barreled</p>}
+
+        {finished && <p>that was a long surf session</p>}
+
+        {goal === 3 ? <p>My goal is to surf 3 days in a row. without stopping. in kelly's wave pool. on a door.</p> : <p>My goal is not 3 days.</p>}
+
+        {surferBoi && <p>I'm a surfer boi and i just wanna surf</p>}
+        {lastName === 'ever' && firstName === 'greatest' ? <p>like a sprained ankle boi I aint nuthin to play wit</p> : <p>ineeedaonedance</p>} 
+</BaseLayout>
+
+
+
+
+
+
+<!-- <html lang="en">
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="icon" href="/favicon.ico" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<title>{pageTitle}</title>
+        <style define:vars={{skillColor, padding, fontWeight, textCase}}>
+            h1 {
+                color: purple;
+                font-size: 4rem;
+            }
+            .skill {
+                color: var(--skillColor);
+                font-weight: var(--fontWeight);
+                padding: var(--padding);
+                text-transform: var(--textCase);
+            }
+        </style>
 	</head>
     <body>
-        <a href="/">Home</a>
-        <a href="/about/">About</a>
-        <a href="/blog/">Blog</a>
+        <Header currentPage="about" />
 
-        <h1>About Me</h1>
+        <h1>{pageTitle}</h1>
         <h2>... and my new Astro site!</h2>
 
-        <p>I will be loggging surf trips from across the glbe</p>
+        <p>I will be loggging surf trips from across the globe</p>
 
         <p>This site will update as I complete more of the adventure, so check back for more posts!</p>
+
+        <p>Here are a few facts about me:</p>
+        <ul>
+            <li>My name is {identity.firstName}.</li>
+            <li>I live in {identity.country} and I work as a {identity.occupation}.</li>
+            {identity.hobbies.length >= 2 &&
+                <li>Two of my hobbies are: {identity.hobbies[0]} and {identity.hobbies[1]}</li>
+            }
+        </ul>
+        <p>My skills are:</p>
+        <ul>
+            {skills.map((skill) => <li class="skill">{skill}</li>)}
+        </ul>
+
+        {happy && <p>I like getting barreled</p>}
+
+        {finished && <p>that was a long surf session</p>}
+
+        {goal === 3 ? <p>My goal is to surf 3 days in a row. without stopping. in kelly's wave pool. on a door.</p> : <p>My goal is not 3 days.</p>}
+
+        {surferBoi && <p>I'm a surfer boi and i just wanna surf</p>}
+        {lastName === 'ever' && firstName === 'greatest' ? <p>like a sprained ankle boi I aint nuthin to play wit</p> : <p>ineeedaonedance</p>}
+                        <p>yoooo</p>
+                <p>hello</p>
+                <p>why it no work?</p>
+        <Footer />
+
+        <script>
+			import "../scripts/menu.js";
+		</script>
     </body>
-</html>
+</html> -->
